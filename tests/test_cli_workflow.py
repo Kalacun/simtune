@@ -2,11 +2,18 @@
 
 import json
 import sys
+from dataclasses import replace
+from functools import partial
 
 import pytest
+from test_search import snapshot as _snapshot
 
-from simtune import cli
+from simtune import cli, tune
 from simtune.lookup import find_run
+from simtune.models import Platform
+from simtune.search import run_search
+
+snapshot = _snapshot
 
 
 def test_config_precedence_paths_and_effective_output(tmp_path, monkeypatch, capsys):
@@ -85,7 +92,14 @@ def test_invalid_config_fails_before_launch(tmp_path, monkeypatch, contents, cap
     assert not (tmp_path / "runs").exists()
 
 
-def test_json_result_and_default_id(tmp_path, monkeypatch, capsys):
+def test_json_result_and_default_id(tmp_path, monkeypatch, capsys, snapshot):
+    # This is an unsupported-host output contract, independent of the test host.
+    host = replace(snapshot, platform=Platform.MACOS)
+    monkeypatch.setattr(
+        tune,
+        "run_search",
+        partial(run_search, snapshot_provider=lambda: host, capabilities={"tools": {}}),
+    )
     monkeypatch.chdir(tmp_path)
     status = cli.main(
         [
@@ -101,7 +115,7 @@ def test_json_result_and_default_id(tmp_path, monkeypatch, capsys):
             "print('safe')",
         ]
     )
-    assert status == 1  # local macOS search cannot claim Linux strict policies
+    assert status == 1  # synthetic macOS host cannot claim Linux strict policies
     out = capsys.readouterr()
     result = json.loads(out.out)
     assert result["kind"] == "simtune_tune_result"
