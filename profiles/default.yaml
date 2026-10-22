@@ -1,0 +1,48 @@
+# Reference copy of the packaged built-ins; edits require --profiles.
+desktop_friendly:
+  description: Low interference with desktop workloads; gentler CPU/IO priority.
+  fallback_mode: throughput
+  safety_notes: Avoids aggressive CPU pinning; may reduce throughput.
+  actions:
+  - type: nice
+    level: 5
+  - type: ionice
+    class: idle
+    optional: true
+  - type: cgroup_systemd
+    optional: true
+    properties:
+      CPUQuota: 80%
+throughput:
+  description: CPU-oriented policy with explicit affinity and optional NUMA interleaving.
+  fallback_mode: desktop_friendly
+  safety_notes: May reduce desktop responsiveness on shared machines.
+  actions:
+  - type: nice
+    level: 0
+  - type: taskset
+    cpus: available
+  - type: numactl
+    optional: true
+    interleave: all
+isolated:
+  description: Constrain CPU and memory use through a systemd user scope.
+  fallback_mode: desktop_friendly
+  safety_notes: Requires a functional systemd user manager; this is not a security
+    sandbox.
+  actions:
+  - type: cgroup_systemd
+    properties:
+      CPUQuota: 70%
+      MemoryMax: 4G
+      IOWeight: '100'
+latency:
+  description: Prefer latency-sensitive scheduling where allowed.
+  fallback_mode: desktop_friendly
+  safety_notes: Negative nice may require elevated privileges.
+  actions:
+  - type: nice
+    level: -5
+  - type: taskset
+    optional: true
+    cpus: 0-1

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-22T00:51:58.970122+00:00",
+  "pairs": 10,
+  "warmups_per_mode": 1,
+  "orders": [
+    [
+      "one_thread",
+      "inherited"
+    ],
+    [
+      "one_thread",
+      "inherited"
+    ],
+    [
+      "inherited",
+      "one_thread"
+    ],
+    [
+      "inherited",
+      "one_thread"
+    ],
+    [
+      "one_thread",
+      "inherited"
+    ],
+    [
+      "one_thread",
+      "inherited"
+    ],
+    [
+      "inherited",
+      "one_thread"
+    ],
+    [
+      "inherited",
+      "one_thread"
+    ],
+    [
+      "inherited",
+      "one_thread"
+    ],
+    [
+      "one_thread",
+      "inherited"
+    ]
+  ],
+  "timeout_seconds_per_trial": 60,
+  "workload_sha256": "f0914fb62c81f9961d2d495a02b02eee10d7721c2037c4dbe5a2b212dae15494",
+  "profiles_sha256": "8bc13d55d94473eecbeeb64c3ffcf12231ff8222055824d3c89f11608e53645f",
+  "harness_sha256": "08746b4713db01761747ad9bdef398794cfb99b1aa9786aacb7a349139348ddb",
+  "platform": {
+    "system": "Darwin",
+    "release": "27.0.0",
+    "machine": "arm64",
+    "logical_cpus": 8
+  },
+  "python": "3.14.8",
+  "versions": {
+    "simtune": "0.1.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "threadpoolctl": "3.7.0",
+    "PyYAML": "6.0.3"
+  },
+  "inherited_runtime_env": {
+    "OMP_NUM_THREADS": null,
+    "OMP_PROC_BIND": null,
+    "OMP_PLACES": null,
+    "OPENBLAS_NUM_THREADS": null,
+    "VECLIB_MAXIMUM_THREADS": null
+  },
+  "scientific_work": "UCI digits, 1797x64; KMeans(10 clusters, 50 initializations, Lloyd), seeds 0..4, fixed float64 input",
+  "candidate": "manual OMP_NUM_THREADS=1; baseline preserves inherited settings",
+  "validation": "every objective recomputed; all five label hashes identical and objectives close at rtol=1e-10, atol=1e-6 to first warmup",
+  "limitations": "exploratory candidate followed by fresh pairs; one dataset/session; no automatic selection, equal-resource claim, held-out confirmation or validated recipe"
+}

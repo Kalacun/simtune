@@ -1,0 +1,70 @@
+# Harmless stage-04 manifest. It validates correctness only; it makes no speedup claim.
+kind = "workload_spec"
+schema_version = 1
+id = "stage04-fixture"
+family = "stage04-fixture"
+argv_template = ["workload.py", "{case.input}", "{trial_dir}"]
+resolved_executable = "workload.py"
+executable_sha256 = "b3d051c12bd2f11282df5bada06fde6410771f6e418da6123c6a3b90e5ede414"
+base_directory = "."
+case_substitutions = ["input"]
+training_case_ids = ["tiny"]
+validation_case_ids = []
+
+[fixed_env]
+SCIENCE_SEED = "7"
+
+[runtime]
+name = "synthetic-openmp"
+[runtime.unavailable]
+version = "The fixture has no separately versioned runtime."
+identity = "The executable hash is the relevant fixture identity."
+
+[limits]
+trial_timeout_seconds = 5.0
+max_trials = 8
+max_launches = 16
+
+[[artifacts]]
+id = "fixture-source"
+role = "source"
+path = "workload.py"
+sha256 = "b3d051c12bd2f11282df5bada06fde6410771f6e418da6123c6a3b90e5ede414"
+
+[[output_checks]]
+id = "science-value"
+method = "numeric_json"
+output = "result.json"
+json_field = ["science", "value"]
+expected = 6.0
+absolute_tolerance = 0.0
+relative_tolerance = 0.0
+rationale = "The fixed-work fixture must retain its declared numerical value."
+[output_checks.unavailable]
+sha256 = "Numeric JSON check does not use a file digest."
+argv = "Numeric JSON check does not launch a validator."
+timeout_seconds = "Numeric JSON check does not launch a validator."
+
+[[cases]]
+kind = "case_spec"
+schema_version = 1
+id = "tiny"
+input_class = "tiny"
+weight = 1.0
+checks = []
+regression_tolerance = 0.0
+[cases.arguments]
+input = "input.txt"
+[[cases.input_artifacts]]
+id = "tiny-input"
+role = "input"
+path = "input.txt"
+sha256 = "a0d44bb98f4a92140c5a2e62e36956c80ddc51a9d6fc8538017130f0dc3e5e0c"
+[cases.resource_needs]
+basis = "inherited"
+cpu_count = 1
+thread_count = 1
+reference_cpu_ids = [0]
+rationale = "Every fixture policy uses the same one-CPU, one-thread budget."
+[cases.resource_needs.unavailable]
+memory_bytes = "The fixture does not declare a memory capacity requirement."

@@ -1,0 +1,28 @@
+{
+  "kind": "metric",
+  "schema_version": 1,
+  "id": "wall-time",
+  "name": "elapsed",
+  "value": null,
+  "unit": "seconds",
+  "collector": {
+    "name": "monotonic-clock",
+    "version": null,
+    "mechanism": "process-tree elapsed clock",
+    "extensions": {},
+    "unavailable": {
+      "version": "Not applicable in this synthetic example."
+    }
+  },
+  "scope": "process_tree",
+  "raw_source": null,
+  "scaling_factor": null,
+  "multiplex_running_fraction": null,
+  "extensions": {},
+  "unavailable": {
+    "value": "Not applicable in this synthetic example.",
+    "raw_source": "Not applicable in this synthetic example.",
+    "scaling_factor": "Not applicable in this synthetic example.",
+    "multiplex_running_fraction": "Not applicable in this synthetic example."
+  }
+}

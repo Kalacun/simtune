@@ -1,0 +1,110 @@
+{
+  "kind": "trial_record",
+  "schema_version": 1,
+  "id": "trial-001",
+  "experiment_id": "experiment-synthetic",
+  "case_id": "train-small",
+  "policy_id": "spread",
+  "pair_id": "pair-001",
+  "phase": "training",
+  "order": 0,
+  "argv": [
+    "/synthetic/solver",
+    "input α.dat",
+    "--output",
+    "/synthetic/trials/trial-001",
+    "literal $HOME",
+    "line\nbreak"
+  ],
+  "cwd": "/synthetic/trials/trial-001",
+  "env_overrides": {
+    "OMP_PROC_BIND": "spread"
+  },
+  "started_at": null,
+  "ended_at": null,
+  "status": "unknown",
+  "status_reason": "Synthetic format example: no program was launched.",
+  "return_code": null,
+  "timed_out": null,
+  "actions": [
+    {
+      "setting": {
+        "id": "omp-bind",
+        "target": "runtime",
+        "name": "OMP_PROC_BIND",
+        "value": "spread",
+        "unit": "runtime-enum",
+        "required": true,
+        "rationale": "Test whether spreading workers reduces shared-cache contention for this case.",
+        "expected_effect": "May improve throughput; memory locality may worsen. This is a hypothesis.",
+        "extensions": {},
+        "unavailable": {}
+      },
+      "tool": {
+        "name": "OpenMP runtime",
+        "version": null,
+        "mechanism": "child environment override",
+        "extensions": {},
+        "unavailable": {
+          "version": "Not applicable in this synthetic example."
+        }
+      },
+      "status": "planned",
+      "resolved_value": "spread",
+      "observed_value": null,
+      "explanation": "Planned environment setting only. Actual worker binding has not been observed.",
+      "observation_scope": "No runtime observation was made.",
+      "evidence": [],
+      "extensions": {},
+      "unavailable": {
+        "observed_value": "Not applicable in this synthetic example."
+      }
+    }
+  ],
+  "metrics": [
+    {
+      "kind": "metric",
+      "schema_version": 1,
+      "id": "wall-time",
+      "name": "elapsed",
+      "value": null,
+      "unit": "seconds",
+      "collector": {
+        "name": "monotonic-clock",
+        "version": null,
+        "mechanism": "process-tree elapsed clock",
+        "extensions": {},
+        "unavailable": {
+          "version": "Not applicable in this synthetic example."
+        }
+      },
+      "scope": "process_tree",
+      "raw_source": null,
+      "scaling_factor": null,
+      "multiplex_running_fraction": null,
+      "extensions": {},
+      "unavailable": {
+        "value": "Not applicable in this synthetic example.",
+        "raw_source": "Not applicable in this synthetic example.",
+        "scaling_factor": "Not applicable in this synthetic example.",
+        "multiplex_running_fraction": "Not applicable in this synthetic example."
+      }
+    }
+  ],
+  "validation": {
+    "state": "unchecked",
+    "checks": [],
+    "explanation": "No scientific checks were run.",
+    "evidence": [],
+    "extensions": {},
+    "unavailable": {}
+  },
+  "raw_artifacts": [],
+  "extensions": {},
+  "unavailable": {
+    "started_at": "Not applicable in this synthetic example.",
+    "ended_at": "Not applicable in this synthetic example.",
+    "return_code": "Not applicable in this synthetic example.",
+    "timed_out": "Not applicable in this synthetic example."
+  }
+}

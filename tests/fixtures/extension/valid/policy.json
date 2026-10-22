@@ -1,0 +1,52 @@
+{
+  "kind": "policy_spec",
+  "schema_version": 1,
+  "id": "spread",
+  "placement": "spread",
+  "numa_policy": "inherited",
+  "numa_node_count": null,
+  "runtime": {
+    "name": "synthetic-openmp",
+    "version": null,
+    "identity": null,
+    "extensions": {},
+    "unavailable": {
+      "version": "Not applicable in this synthetic example.",
+      "identity": "Not applicable in this synthetic example."
+    }
+  },
+  "settings": [
+    {
+      "id": "omp-bind",
+      "target": "runtime",
+      "name": "OMP_PROC_BIND",
+      "value": "spread",
+      "unit": "runtime-enum",
+      "required": true,
+      "rationale": "Test whether spreading workers reduces shared-cache contention for this case.",
+      "expected_effect": "May improve throughput; memory locality may worsen. This is a hypothesis.",
+      "extensions": {},
+      "unavailable": {}
+    }
+  ],
+  "budget": {
+    "basis": "inherited",
+    "cpu_count": 2,
+    "thread_count": 2,
+    "memory_bytes": null,
+    "reference_cpu_ids": [
+      2,
+      6
+    ],
+    "rationale": "Keep the same inherited CPU and thread budget for all policies.",
+    "extensions": {},
+    "unavailable": {
+      "memory_bytes": "Not applicable in this synthetic example."
+    }
+  },
+  "rationale": "Synthetic launch policy; no measured performance claim.",
+  "extensions": {},
+  "unavailable": {
+    "numa_node_count": "Not applicable in this synthetic example."
+  }
+}

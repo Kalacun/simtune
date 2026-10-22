@@ -1,0 +1,50 @@
+# Synthetic normalized contract input. No program exists or is executed here.
+kind = "workload_spec"
+schema_version = 1
+id = "solver"
+family = "solver-family"
+argv_template = ["/synthetic/solver", "{case.input}", "--output", "{trial_dir}"]
+resolved_executable = "/synthetic/solver"
+executable_sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+artifacts = []
+base_directory = "/synthetic"
+case_substitutions = ["input"]
+training_case_ids = ["train-small"]
+validation_case_ids = []
+output_checks = []
+
+[fixed_env]
+[runtime]
+name = "synthetic-openmp"
+[runtime.unavailable]
+version = "Not applicable in this synthetic example."
+identity = "Not applicable in this synthetic example."
+
+[limits]
+trial_timeout_seconds = 10.0
+max_trials = 20
+max_launches = 20
+
+[[cases]]
+kind = "case_spec"
+schema_version = 1
+id = "train-small"
+input_class = "small"
+weight = 1.0
+checks = []
+regression_tolerance = 0.0
+[cases.arguments]
+input = "input α.dat"
+[[cases.input_artifacts]]
+id = "input-small"
+role = "input"
+path = "input α.dat"
+sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+[cases.resource_needs]
+basis = "inherited"
+cpu_count = 2
+thread_count = 2
+reference_cpu_ids = [2, 6]
+rationale = "Keep the same inherited CPU and thread budget for all policies."
+[cases.resource_needs.unavailable]
+memory_bytes = "Not applicable in this synthetic example."

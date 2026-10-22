@@ -1,0 +1,108 @@
+{
+  "kind": "r06_study_protocol_draft",
+  "schema_version": 1,
+  "state": "prepared-not-frozen",
+  "target": null,
+  "source_archive_sha256": null,
+  "source_inventory_sha256": null,
+  "wheel_sha256": null,
+  "binary_sha256": null,
+  "compiler_and_flags": null,
+  "runtime_identity_and_linkage": null,
+  "validator_and_interpreter_sha256": null,
+  "actual_resource_snapshot_and_mask": null,
+  "memory_headroom_and_allocation": null,
+  "runtime_environment_allowlist": null,
+  "pilots": null,
+  "steps": null,
+  "case_specifications": [
+    {
+      "id": "training",
+      "size": 2048,
+      "weight": 1.0,
+      "wave": 1,
+      "first_touch": "parallel"
+    },
+    {
+      "id": "heldout",
+      "size": 3072,
+      "weight": 1.0,
+      "wave": 1,
+      "first_touch": "parallel",
+      "regression_tolerance": 0.0
+    }
+  ],
+  "cpus": 2,
+  "threads": 2,
+  "expected_future_case_mix": null,
+  "candidate_ledger_and_plans": null,
+  "allowed_eligible_policy_ids": [
+    "baseline",
+    "runtime-close",
+    "runtime-spread"
+  ],
+  "numa_policy": "inherited only; numactl absent from the process PATH",
+  "primary_metric": "strict TrialRecord wall_time_sec; fixed binary/work/resources",
+  "diagnostic_metrics": "pilot, worker affinity, direct/wrapper launch, internal kernel; excluded from primary inference",
+  "session_count": 1,
+  "repeatability_claim": false,
+  "whole_session_ceiling_seconds": 3600,
+  "tune": {
+    "budget_seconds": 600,
+    "training_pairs_per_candidate": 5,
+    "warmup_pairs_per_candidate": 1,
+    "seed": 2718,
+    "confirmation_pairs": 5,
+    "confirmation_fraction": 0.5,
+    "minimum_time_reduction": 0.02,
+    "bootstrap_samples": 2000,
+    "interval": "95% existing seeded paired bootstrap; no cross-session pooling",
+    "trial_timeout_seconds": 60,
+    "validator_timeout_seconds": 5,
+    "max_trials": 100,
+    "max_launches": 200,
+    "collector": "timing"
+  },
+  "manual_aa": {
+    "sizes": [
+      2048,
+      3072
+    ],
+    "pairs": 6,
+    "warmups": 1,
+    "seed": 1618,
+    "include_direct": true,
+    "timeout_seconds": 60
+  },
+  "aa_interpretation_rule": "Invalid controls stop execution; if either valid interval excludes 1, interpret performance as unstable/inconclusive without rerunning controls or changing raw tuner outcome",
+  "manual_selected_comparator": {
+    "sizes": [
+      2048,
+      3072
+    ],
+    "pairs": 6,
+    "warmups": 1,
+    "seed": 3141,
+    "include_direct": true,
+    "timeout_seconds": 60
+  },
+  "negative_confirmation_branch": {
+    "condition": "completed reference recipe with no held-out confirmation",
+    "invocations": 1,
+    "budget_seconds": 600,
+    "training_pairs": 3,
+    "warmup_pairs": 1,
+    "seed": 0,
+    "confirmation_pairs": 5,
+    "confirmation_fraction": 0.5,
+    "minimum_time_reduction": 0.02,
+    "bootstrap_samples": 2000,
+    "max_trials": 256,
+    "max_launches": 512,
+    "interpretation": "separate fresh reference confirmation; no additional candidate selection opportunity"
+  },
+  "failure_policy": "retain all warmups, exclusions, failures, incomplete pairs and slow observations; no automatic retry, outlier deletion, budget extension or favorable-result stopping",
+  "scientific_tolerance": 1e-09,
+  "unavailable": "No authorized native target supplied. Null site/build/pilot fields must be observed and frozen before evaluation; proposed cases may change only under a separately labeled pre-evaluation site protocol.",
+  "distribution_provenance": "Portable counterpart of the private R06 draft; fill hashes from the actual transferred sdist, inventory and installed wheel before freezing. Original checkpoint hashes remain in private historical records."
+}

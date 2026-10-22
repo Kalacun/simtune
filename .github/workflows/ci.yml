@@ -1,0 +1,127 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ['3.11', '3.12', '3.13', '3.14']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e '.[dev]'
+      - name: Require GCC/OpenMP numerical checks on Linux
+        if: runner.os == 'Linux'
+        run: |
+          command -v gcc
+          gcc --version
+          echo 'SIMTUNE_OPENMP_CC=gcc' >> "$GITHUB_ENV"
+      - run: python -m pytest -ra
+      - name: Require actual Linux affinity and OpenMP checks without skips
+        if: runner.os == 'Linux'
+        run: |
+          python -m pytest tests/test_native_workflow.py::test_native_linux_strict_heat tests/test_runbook_taskset.py::test_native_linux_documented_taskset --junitxml=native-checks.xml -ra
+          python -c 'import xml.etree.ElementTree as E; suites = E.parse("native-checks.xml").getroot(); assert sum(int(s.get("tests", 0)) for s in suites) == 2; assert sum(int(s.get("skipped", 0)) for s in suites) == 0'
+      - run: simtune --version
+      - run: simtune run --mode auto --out runs --dry-run -- python -c 'print("dry run")'
+
+  extras-and-package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - run: python -m pip install -e '.[dev,yaml,rich]'
+      - run: python -m pytest -ra
+        env:
+          SIMTUNE_OPENMP_CC: gcc
+      - name: Check HPC template syntax without submitting jobs
+        run: |
+          bash -n examples/hpc/heat.sbatch
+          bash -n examples/hpc/heat_step.sh
+      - run: python -m ruff check .
+      - run: python -m ruff format --check .
+      - run: python -m build
+      - run: python tests/check_archives.py dist .
+
+  installed-wheel:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ['3.11', '3.12', '3.13', '3.14']
+        extras: [base, extras]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install build
+      - run: python -m build
+      - run: python tests/check_archives.py dist .
+      - name: Install and test outside checkout (recipe hosts/timings are synthetic)
+        shell: bash
+        env:
+          EXTRA_MODE: ${{ matrix.extras }}
+        run: |
+          python -m venv "$RUNNER_TEMP/simtune-wheel"
+          wheel=("$GITHUB_WORKSPACE"/dist/*.whl)
+          requirement="${wheel[0]}"
+          if [ "$EXTRA_MODE" = extras ]; then requirement="${requirement}[yaml,rich]"; fi
+          "$RUNNER_TEMP/simtune-wheel/bin/python" -m pip install "$requirement" pytest
+          mkdir "$RUNNER_TEMP/installed-checks"
+          # Use audited sdist resources, including curated public docs and policy.
+          python -c 'import sys,glob; from pathlib import Path; sys.path.insert(0, "tests"); from check_archives import unpack_sdist; unpack_sdist(Path(glob.glob("dist/*.tar.gz")[0]), Path(sys.argv[1]))' "$RUNNER_TEMP/unpacked"
+          cp -R "$RUNNER_TEMP/unpacked/"{tests,docs,examples,profiles,distribution} "$RUNNER_TEMP/installed-checks/"
+          cp "$RUNNER_TEMP/unpacked/"{.gitignore,pyproject.toml,AGENTS.md,README.md,CHANGELOG.md,CONTRIBUTING.md,LICENSE} "$RUNNER_TEMP/installed-checks/"
+          cd "$RUNNER_TEMP/installed-checks"
+          unset PYTHONPATH
+          export PATH="$RUNNER_TEMP/simtune-wheel/bin:$PATH"
+          export SIMTUNE_REQUIRE_INSTALLED=1
+          export SIMTUNE_TEST_SOURCE_ROOT="$RUNNER_TEMP/unpacked"
+          if [ "$RUNNER_OS" = Linux ]; then export SIMTUNE_OPENMP_CC=gcc; fi
+          python -c 'import simtune,importlib.util,os; from pathlib import Path; assert "site-packages" in Path(simtune.__file__).parts; assert [importlib.util.find_spec(m) is not None for m in ("yaml","rich")] == [os.environ["EXTRA_MODE"] == "extras"] * 2; print(simtune.__file__)'
+          simtune --version
+          simtune list-modes
+          simtune run --mode throughput --out unused --dry-run -- true
+          # Full installed suite includes public tune dry-run/JSON/show, synthetic
+          # recipe export/load/replay, heat helper and real Linux strict smoke.
+          python -m pytest -ra
+      - name: Checked Linux CLI workflow with actual runtime and worker diagnostics
+        if: runner.os == 'Linux' && matrix.python == '3.14' && matrix.extras == 'extras'
+        shell: bash
+        run: |
+          cd "$RUNNER_TEMP/installed-checks"
+          unset PYTHONPATH
+          "$RUNNER_TEMP/simtune-wheel/bin/python" docs/implementation/release-plan/r06/ci_smoke.py --kit "$RUNNER_TEMP/installed-checks" --out "$RUNNER_TEMP/native-cli"
+      - name: Retain native functional evidence, including failures
+        if: always() && runner.os == 'Linux' && matrix.python == '3.14' && matrix.extras == 'extras'
+        uses: actions/upload-artifact@v7
+        with:
+          name: native-cli-evidence
+          path: ${{ runner.temp }}/native-cli
+          if-no-files-found: warn
+          retention-days: 30

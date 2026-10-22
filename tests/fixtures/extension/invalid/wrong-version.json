@@ -1,0 +1,39 @@
+{
+  "kind": "case_spec",
+  "schema_version": 2,
+  "id": "train-small",
+  "input_class": "small",
+  "arguments": {
+    "input": "input \u03b1.dat"
+  },
+  "input_artifacts": [
+    {
+      "id": "input-small",
+      "role": "input",
+      "path": "input \u03b1.dat",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "extensions": {},
+      "unavailable": {}
+    }
+  ],
+  "weight": 1.0,
+  "checks": [],
+  "resource_needs": {
+    "basis": "inherited",
+    "cpu_count": 2,
+    "thread_count": 2,
+    "memory_bytes": null,
+    "reference_cpu_ids": [
+      2,
+      6
+    ],
+    "rationale": "Keep the same inherited CPU and thread budget for all policies.",
+    "extensions": {},
+    "unavailable": {
+      "memory_bytes": "Not applicable in this synthetic example."
+    }
+  },
+  "regression_tolerance": 0.0,
+  "extensions": {},
+  "unavailable": {}
+}

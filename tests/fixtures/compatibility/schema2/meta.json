@@ -1,0 +1,6 @@
+{
+  "schema_version": 2,
+  "mode": "baseline",
+  "cmd": ["synthetic", "space here", "α", "$HOME", "line\nbreak"],
+  "fixture_note": "Synthetic compatibility data; no benchmark or native host evidence."
+}

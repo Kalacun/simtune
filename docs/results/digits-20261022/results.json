@@ -1,0 +1,1190 @@
+[
+  {
+    "phase": "warmup",
+    "pair": -1,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 3.934453708003275,
+    "wall_seconds": 3.592242124999757,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.4393943329923786,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339125,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "warmup",
+    "pair": -1,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7084625830029836,
+    "wall_seconds": 1.5745952079887502,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7301871249946998,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 0,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7783850410050945,
+    "wall_seconds": 1.6460787499963772,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7314565830020001,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 0,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.2343700420024106,
+    "wall_seconds": 2.1038641660124995,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2365519580052933,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339125,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 1,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.6858687499916414,
+    "wall_seconds": 1.5576251669990597,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7408695829944918,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 1,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.2392371250025462,
+    "wall_seconds": 2.105030082995654,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2488667500001611,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339125,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 2,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.215776041994104,
+    "wall_seconds": 2.0844105419964762,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2397490000003017,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339122,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 2,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7151715000072727,
+    "wall_seconds": 1.5840733329969225,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.744121042007464,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 3,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.205017415995826,
+    "wall_seconds": 2.0730702500004554,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2439929159882013,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167964,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339125,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 3,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7580539159971522,
+    "wall_seconds": 1.6250627920089755,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7415146669954993,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 4,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7208058329997584,
+    "wall_seconds": 1.5752297500002896,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7383050000062212,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 4,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.2432283329981146,
+    "wall_seconds": 2.1118040419969475,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2613643750082701,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339122,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 5,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7234674579958664,
+    "wall_seconds": 1.5894600409956183,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7527030000055674,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 5,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.247678125000675,
+    "wall_seconds": 2.1181475829944247,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2571828749933047,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339125,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 6,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.2196511250076583,
+    "wall_seconds": 2.0869370420114137,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.243596875006915,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339122,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 6,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.757737249994534,
+    "wall_seconds": 1.62520283300546,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7543782499997178,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 7,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.2591346249973867,
+    "wall_seconds": 2.1239632919896394,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2589470829989295,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339122,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 7,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7047919590113452,
+    "wall_seconds": 1.5723562079947442,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7346072910004295,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 8,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.203517957997974,
+    "wall_seconds": 2.0730791249952745,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2395852920017205,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339125,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 8,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7119501669949386,
+    "wall_seconds": 1.580064957990544,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7442035420099273,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 9,
+    "mode": "one_thread",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 1.7074454999965383,
+    "wall_seconds": 1.577943166004843,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 0.7368660409993026,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263738,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076943,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.264416798,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.977433913,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250746,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "phase": "measurement",
+    "pair": 9,
+    "mode": "inherited",
+    "status": "passed",
+    "return_code": 0,
+    "cli_seconds": 2.2136290000053123,
+    "wall_seconds": 2.080307833995903,
+    "scientific_output": {
+      "dataset_sha256": "20def7f70a702f0af9732fbba4375e147a7d54fe70d8c45569b8e7c1c7010c10",
+      "shape": [
+        1797,
+        64
+      ],
+      "sklearn_version": "1.9.1",
+      "compute_seconds": 1.2459148330090102,
+      "checks": "passed",
+      "results": [
+        {
+          "seed": 0,
+          "inertia": 1165153.9999263734,
+          "labels_sha256": "918370b4c81111c4f39c9c8880945add8f0386a4b3e16d5c55da4e2519d5e2eb"
+        },
+        {
+          "seed": 1,
+          "inertia": 1165134.2177076936,
+          "labels_sha256": "dee0d22bcabb451dd34d9a88c2dab5b3167eb0436091e3604fbc1c6523b5b402"
+        },
+        {
+          "seed": 2,
+          "inertia": 1165152.2644167962,
+          "labels_sha256": "ef50de676220242c2e50dc656fbf504faed7f19953447bd12c73782d6f8e3316"
+        },
+        {
+          "seed": 3,
+          "inertia": 1165151.9774339125,
+          "labels_sha256": "11aca6a4da1ec0863cdf0ed037a754f48f2b9d054d8ed7f21d364994aca1f8d9"
+        },
+        {
+          "seed": 4,
+          "inertia": 1165119.9814250749,
+          "labels_sha256": "a39d1ebc721cb3810a49c58cd187dadfea64d7f19eeabaa0192b4eac1e48c54f"
+        }
+      ],
+      "threadpools": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "version": null
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,32 @@
+# Candidate hypotheses for examples/heat2d.c, not measured winners.
+# Explicit --profiles replaces built-ins. Do not use auto with this collection.
+inherited:
+  description: Preserve inherited execution settings for a harness control
+  fallback_mode: null
+  safety_notes: No tuning actions; not a claimed performance improvement
+  actions: []
+omp_close:
+  description: OpenMP threads close together on eligible core places
+  fallback_mode: null
+  safety_notes: Use an OpenMP build; keep thread count fixed and within your allocation
+  actions:
+    - type: env
+      vars:
+        OMP_PLACES: cores
+        OMP_PROC_BIND: close
+omp_spread:
+  description: OpenMP threads spread across eligible core places
+  fallback_mode: null
+  safety_notes: Runtime and inherited affinity determine the available places
+  actions:
+    - type: env
+      vars:
+        OMP_PLACES: cores
+        OMP_PROC_BIND: spread
+numa_interleave:
+  description: Interleave memory over memory nodes permitted by the current cpuset
+  fallback_mode: null
+  safety_notes: Linux only; check allowed nodes and cluster policy; may hurt performance
+  actions:
+    - type: numactl
+      interleave: all

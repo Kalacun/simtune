@@ -1,0 +1,55 @@
+{
+  "kind": "experiment_record",
+  "schema_version": 1,
+  "id": "experiment-synthetic",
+  "workload_fingerprint": "0000000000000000000000000000000000000000000000000000000000000000",
+  "environment_fingerprint": "0000000000000000000000000000000000000000000000000000000000000000",
+  "candidates": [
+    {
+      "policy_id": "spread",
+      "exclusion_reason": null,
+      "extensions": {},
+      "unavailable": {
+        "exclusion_reason": "Not applicable in this synthetic example."
+      }
+    }
+  ],
+  "objective": "elapsed_seconds",
+  "seed": 0,
+  "budget": {
+    "authorized_seconds": 600.0,
+    "spent_seconds": 0.0,
+    "confirmation_reserved_seconds": 120.0,
+    "cleanup_allowance_seconds": 5.0,
+    "max_trials": 20,
+    "trials_started": 0,
+    "max_launches": 20,
+    "launches_started": 0,
+    "additional_seconds": [],
+    "charges_seconds": {},
+    "extensions": {},
+    "unavailable": {}
+  },
+  "journal": "trials.jsonl",
+  "completion_marker": null,
+  "selection_rule": {
+    "minimum_time_reduction": 0.02,
+    "confidence_level": 0.95,
+    "interval_method": "paired_bootstrap",
+    "bootstrap_seed": 0,
+    "minimum_confirmation_pairs": 5,
+    "aggregation": "weighted_mean_log_paired_ratio",
+    "extensions": {},
+    "unavailable": {}
+  },
+  "training_trial_ids": [],
+  "confirmation_trial_ids": [],
+  "selected_policy_id": null,
+  "outcome": "inconclusive",
+  "explanation": "Synthetic fixture with no executed trials or performance evidence.",
+  "extensions": {},
+  "unavailable": {
+    "completion_marker": "Not applicable in this synthetic example.",
+    "selected_policy_id": "Not applicable in this synthetic example."
+  }
+}

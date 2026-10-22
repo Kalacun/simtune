@@ -1,0 +1,13 @@
+{
+  "iterations": [
+    {
+      "wall_time_sec": 0.0603742510002121,
+      "return_code": 127,
+      "timed_out": false,
+      "iteration": 1
+    }
+  ],
+  "aggregate": {
+    "wall_time_sec_mean": 0.0603742510002121
+  }
+}

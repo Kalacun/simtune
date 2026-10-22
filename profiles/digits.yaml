@@ -1,0 +1,15 @@
+# Manual hypothesis: a small clustering job may waste time synchronizing workers.
+# This changes the thread budget. It is not a fixed-resource automatic-tuner result.
+inherited:
+  description: Preserve the inherited runtime environment
+  fallback_mode: null
+  safety_notes: Inspect inherited thread counts and available resources
+  actions: []
+one_thread:
+  description: Run the unchanged clustering analysis with one OpenMP worker
+  fallback_mode: null
+  safety_notes: May help or hurt; compare checked outputs and end-to-end timings
+  actions:
+    - type: env
+      vars:
+        OMP_NUM_THREADS: '1'

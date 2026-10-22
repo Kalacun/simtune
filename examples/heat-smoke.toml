@@ -1,0 +1,9 @@
+# Copy beside a freshly generated heat.toml (64/80 grids, 3 steps).
+# Correctness only: this budget/configuration demonstrates no performance gain.
+[tune]
+workload = "heat.toml"
+budget = "30s"
+repeat = 1
+warmups = 0
+out = "results/heat-smoke"
+save = "heat-smoke.recipe.json"

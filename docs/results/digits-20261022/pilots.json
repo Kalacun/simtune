@@ -1,0 +1,108 @@
+[
+  {
+    "name": "pilot-inherited",
+    "purpose": "exploratory pilot, not measurement evidence; test activity may overlap",
+    "output": {
+      "seconds": 0.38984583399724215,
+      "eigenvalues": [
+        6.276679225551364,
+        6.358903890152096,
+        7.53098945558667,
+        8.01953996020153,
+        9.475572485154192,
+        9.80036189846285,
+        12.703239453847946,
+        13.798733652424438,
+        15.191535157376958,
+        17.665717732117827,
+        20.586084238759078,
+        23.591520883069094,
+        33.04155525230906,
+        45.91850633271529,
+        54.85557166546059,
+        59.136695895280546
+      ],
+      "residual": 2.4619249118001036e-15,
+      "threads": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "prefix": "libomp",
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "pilot-one",
+    "purpose": "exploratory pilot, not measurement evidence; test activity may overlap",
+    "output": {
+      "seconds": 0.36293762500281446,
+      "eigenvalues": [
+        6.276679225551364,
+        6.358903890152096,
+        7.53098945558667,
+        8.01953996020153,
+        9.475572485154192,
+        9.80036189846285,
+        12.703239453847946,
+        13.798733652424438,
+        15.191535157376958,
+        17.665717732117827,
+        20.586084238759078,
+        23.591520883069094,
+        33.04155525230906,
+        45.91850633271529,
+        54.85557166546059,
+        59.136695895280546
+      ],
+      "residual": 2.4619249118001036e-15,
+      "threads": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libomp",
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "pilot-kmeans-inherited",
+    "purpose": "exploratory pilot, not measurement evidence; test activity may overlap",
+    "output": {
+      "seconds": 0.28621058400312904,
+      "inertia": 1165135.9985006852,
+      "labels_sha256": "141188348ebbf8b341e69356a816ccb43d84fde8fd33ab17af46c76b20b9a0ba",
+      "threads": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 8,
+          "prefix": "libomp",
+          "version": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "pilot-kmeans-one",
+    "purpose": "exploratory pilot, not measurement evidence; test activity may overlap",
+    "output": {
+      "seconds": 0.15801004199602176,
+      "inertia": 1165135.998500686,
+      "labels_sha256": "141188348ebbf8b341e69356a816ccb43d84fde8fd33ab17af46c76b20b9a0ba",
+      "threads": [
+        {
+          "user_api": "openmp",
+          "internal_api": "openmp",
+          "num_threads": 1,
+          "prefix": "libomp",
+          "version": null
+        }
+      ]
+    }
+  }
+]

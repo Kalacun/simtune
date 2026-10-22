@@ -1,0 +1,6 @@
+# Example-only versions used in the published 2026-10-22 run.
+# These are not simtune runtime dependencies.
+scikit-learn==1.9.1
+numpy==2.5.4
+scipy==1.18.1
+threadpoolctl==3.7.0

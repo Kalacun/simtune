@@ -1,0 +1,31 @@
+{
+  "kind": "r06_evidence_status",
+  "schema_version": 1,
+  "date": "2026-10-05",
+  "preparation_host": {"os": "macOS 27.0.1", "kernel": "Darwin 27.0.0", "architecture": "arm64", "python": "3.14.4"},
+  "authorized_linux_target": null,
+  "target_status": "No endpoint/access method/allocation supplied; availability elsewhere unknown",
+  "local_stage_state": "in_progress; preparation complete; native gates pending",
+  "independent_review": "not started",
+  "local_checks": {
+    "focused": {"passed": 292, "skipped": 1, "seconds": 86.77},
+    "full": {"passed": 809, "skipped": 1, "seconds": 153.73},
+    "skip_reason": "actual Linux kernel required",
+    "ruff": "repository and preparation helpers passed",
+    "build": "failed: no setuptools/wheel backend; no installation attempted",
+    "installed_package": "existing completed R05 wheel payload audited; no fresh R06 install"
+  },
+  "native_functional_gate": "not run",
+  "protocol": "prepared-not-frozen; site/build/pilot inputs pending",
+  "native_sample_dataset": null,
+  "native_study_outcome": null,
+  "tuning_cost_seconds": null,
+  "validated_seconds_saved": null,
+  "conditional_break_even_runs": null,
+  "hosted_ci": "not run",
+  "numa": "not run; no policy executed or claim made",
+  "slurm": "not run; no submission or claim made",
+  "perf_counters": "not run; no inferred counters",
+  "public_study": "not created; preparation report only",
+  "unavailable": "Native quantities require actual authorized target observations; missing data is neither zero nor a no-improvement result"
+}

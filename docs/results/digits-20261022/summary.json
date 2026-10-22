@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "pairs": 10,
+  "baseline_over_candidate": 1.3156808794385928,
+  "descriptive_bootstrap_95_percent_interval": [
+    1.2985685257654689,
+    1.3321454170395122
+  ],
+  "wall_seconds_mean": {
+    "inherited": 2.096061395898869,
+    "one_thread": 1.5933096997992835
+  },
+  "pair_ratios": [
+    1.27810663130007,
+    1.3514355877102522,
+    1.3158548272843917,
+    1.2756862443682149,
+    1.3406324010808959,
+    1.3326208450434798,
+    1.284108666086975,
+    1.3508155983931722,
+    1.3120214548848195,
+    1.3183667693577235
+  ],
+  "scope": "one local session; manual thread budget change; no held-out or transfer claim"
+}

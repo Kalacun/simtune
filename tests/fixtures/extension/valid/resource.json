@@ -1,0 +1,90 @@
+{
+  "kind": "resource_snapshot",
+  "schema_version": 1,
+  "id": "host-synthetic",
+  "platform": "linux",
+  "is_wsl": false,
+  "online_cpu_ids": [
+    2,
+    6
+  ],
+  "cpus": [
+    {
+      "cpu_id": 2,
+      "socket_id": 0,
+      "core_id": 0,
+      "smt_siblings": [
+        2
+      ],
+      "numa_node_id": 0,
+      "extensions": {},
+      "unavailable": {}
+    },
+    {
+      "cpu_id": 6,
+      "socket_id": 0,
+      "core_id": 1,
+      "smt_siblings": [
+        6
+      ],
+      "numa_node_id": 0,
+      "extensions": {},
+      "unavailable": {}
+    }
+  ],
+  "numa_nodes": [
+    {
+      "node_id": 0,
+      "cpu_ids": [
+        2,
+        6
+      ],
+      "memory_bytes": null,
+      "distances": {
+        "0": 10
+      },
+      "extensions": {},
+      "unavailable": {
+        "memory_bytes": "Not applicable in this synthetic example."
+      }
+    }
+  ],
+  "inherited_cpu_ids": [
+    2,
+    6
+  ],
+  "permitted_cpu_ids": null,
+  "effective_cpu_ids": [
+    2,
+    6
+  ],
+  "allowed_memory_node_ids": [
+    0
+  ],
+  "memory_limits": [
+    {
+      "source": "synthetic cgroup probe",
+      "scope": "process allocation",
+      "state": "unknown",
+      "bytes": null,
+      "extensions": {},
+      "unavailable": {
+        "bytes": "Not applicable in this synthetic example."
+      }
+    }
+  ],
+  "sources": {
+    "online_cpu_ids": "synthetic fixture; no native observations",
+    "cpus": "synthetic fixture; no native observations",
+    "numa_nodes": "synthetic fixture; no native observations",
+    "inherited_cpu_ids": "synthetic fixture; no native observations",
+    "effective_cpu_ids": "synthetic fixture; no native observations",
+    "allowed_memory_node_ids": "synthetic fixture; no native observations"
+  },
+  "scheduler_hints": {},
+  "conflicts": [],
+  "extensions": {},
+  "unavailable": {
+    "permitted_cpu_ids": "Not applicable in this synthetic example."
+  }
+}
