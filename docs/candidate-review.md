@@ -2,6 +2,8 @@
 
 Updated 2026-10-22. simtune 0.1.0 remains experimental. This page distinguishes
 local engineering checks, actual measurements and target-system evidence.
+See the [current main-branch CI results](https://github.com/Kalacun/simtune/actions/workflows/ci.yml?query=branch%3Amain)
+for the exact commit being used; the dated runs below are retained checkpoints.
 
 The prior review's archive ownership defect (R07-F06) is repaired: the sdist
 writer clears UID/GID/account names and extended filesystem metadata, normalizes
@@ -70,11 +72,29 @@ exposed a unit test that assumed macOS. It was cancelled after the failure was
 established. The repaired test injects a synthetic unsupported host; actual Linux
 execution remains covered separately. No failed run is counted as a pass.
 
+A [later run](https://github.com/Kalacun/simtune/actions/runs/39765816918) passed
+23 jobs but exposed intermittent cancellation uncertainty on macOS 3.13/3.14:
+three cooperative-child cases exited, yet were recorded as unknown. Inspection
+found that an observed absent group could be signalled again and that a later
+signal error could overwrite the established absence. The repair preserves that
+observation and retries failed final signals within a separate one-second bound.
+It still requires a successful group signal or observed absence plus direct-child
+reaping; persistent errors remain uncertain. Five deterministic regressions failed
+before the initial repair and pass afterward, including persistent-error negatives.
+A sixth case covers disappearance before the first forwarded signal as well.
+The actual-process cancellation/replay/recovery regression set passed 149 tests.
+The post-repair full macOS source suite passed 893 tests with 30 expected skips
+(28 for the default compiler lacking OpenMP and two actual-Linux gates), in
+159.43 seconds. An explicit GCC/OpenMP run of the heat example/workflow tests
+then passed all 67 cases with no skips. Ruff lint and format checks passed for
+all 88 files. The current CI link covers the final source and installed packages.
+This later failure remains visible rather than being replaced by the earlier pass.
+
 | Gate | State |
 | --- | --- |
 | Final full local suite / Ruff | Passed; counts and scope above |
 | Selected public tree / rebuilt distribution | Passed ownership/content/link checks; deterministic fixed-epoch builds |
-| Hosted Linux/macOS, Python 3.11–3.14 | All 25 jobs passed at the linked commit; skips explained above |
+| Hosted Linux/macOS, Python 3.11–3.14 | Current commit: linked main-branch CI; earlier 25-job pass and subsequent cancellation failure recorded above |
 | Linux affinity / OpenMP checks | Passed on actual hosted Linux; installed CLI workflow and worker masks inspected |
 | Dedicated Linux placement performance study (R06) | Not run |
 | Physical NUMA / real perf counters / Slurm | Not run / deferred |

@@ -126,7 +126,10 @@ are installed before spawn and retained through durable evidence writes; previou
 handlers are restored on exit. Handlers record the first signal only. The parent
 forwards it to the new owned process group, gives the group 0.2 seconds to stop,
 then sends SIGKILL to remaining group members even if the leader has exited.
-Timeout uses immediate SIGKILL. Pipe draining and direct-child reaping each have
+Timeout uses immediate SIGKILL. If the final group signal fails, it is retried
+for up to one second while reaping the leader; only a successful signal or an
+observed absent group establishes teardown. Persistent errors remain unknown.
+An already observed absent group is not signalled again. Pipe draining and direct-child reaping each have
 separate one-second bounds; cancellation adds at most one polling interval
 (0.05 seconds) before forwarding, excluding OS scheduling and spawn/fsync delays.
 Cleanup may overrun the workload deadline by these separate allowances.

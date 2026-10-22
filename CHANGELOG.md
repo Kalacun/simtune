@@ -7,6 +7,8 @@
 - Normalize source-archive ownership, modes, extended metadata and timestamps;
   reject identifying headers in the audit, including directory entries.
 - Repair curated-document fallback when preparing source from a public checkout.
+- Preserve observed process-group disappearance during cancellation and bound
+  retries of transient final-signal errors; persistent errors still stay uncertain.
 - Add a reproducible real-data clustering example with paired manual profiles,
   output-equivalence checks and complete measurement records; no runtime dependency added.
 - Rewrite the README around motivation, usable workflows, measured evidence and

@@ -145,7 +145,48 @@ def test_disabled_tools_are_not_wrapped(caps):
     assert command == ["workload"] and not meta["used_time"]
 
 
-# These use actual POSIX parent/child boundaries, with synthetic host metadata only.
+# Deterministic exit races complement the actual POSIX process tests below.
+
+
+@pytest.mark.parametrize("boundary", ["forward", "probe"])
+def test_absent_group_observation_is_not_overwritten_by_another_signal(monkeypatch, boundary):
+    calls = []
+    absent_signal = signal.SIGINT if boundary == "forward" else 0
+
+    def killpg(pid, signum):
+        calls.append(signum)
+        if signum == absent_signal:
+            raise ProcessLookupError("owned group has disappeared")
+        if boundary == "forward" or signum == signal.SIGKILL:
+            raise PermissionError("a redundant signal cannot invalidate observed absence")
+
+    monkeypatch.setattr(os, "killpg", killpg)
+    assert profiler._teardown(SimpleNamespace(pid=123, poll=lambda: 0), signal.SIGINT)
+    assert calls == ([signal.SIGINT] if boundary == "forward" else [signal.SIGINT, 0])
+
+
+@pytest.mark.parametrize("persistent", [False, True])
+@pytest.mark.parametrize("signum", [signal.SIGINT, signal.SIGKILL])
+def test_final_group_signal_error_is_rechecked_with_a_bound(monkeypatch, persistent, signum):
+    now = [0.0]
+    attempts = []
+
+    def killpg(pid, sig):
+        if sig == signal.SIGKILL:
+            attempts.append(now[0])
+            if persistent or len(attempts) == 1:
+                raise PermissionError("group signal not established")
+            raise ProcessLookupError("group no longer exists")
+
+    monkeypatch.setattr(os, "killpg", killpg)
+    monkeypatch.setattr(profiler.time, "monotonic", lambda: now[0])
+    monkeypatch.setattr(
+        profiler.time, "sleep", lambda seconds: now.__setitem__(0, now[0] + seconds)
+    )
+    # A reaped leader alone is insufficient: persistent group errors stay unknown.
+    assert profiler._teardown(SimpleNamespace(pid=123, poll=lambda: 0), signum) is (not persistent)
+    assert len(attempts) >= 2
+    assert now[0] <= profiler._CANCEL_GRACE_SECONDS + 1.01
 
 
 @pytest.mark.parametrize("sig", SIGNALS)

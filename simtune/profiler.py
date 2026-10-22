@@ -132,39 +132,51 @@ def _build_profiler_command(
 
 # Cancellation may overrun the workload deadline by these separate cleanup bounds.
 _CANCEL_GRACE_SECONDS = 0.2
+_KILL_RETRY_SECONDS = 1.0
 _DRAIN_SECONDS = 1.0
 _REAP_SECONDS = 1.0
 _POLL_SECONDS = 0.05
 
 
-def _signal_group(proc, signum):
-    try:
-        os.killpg(proc.pid, signum)
-        return True
-    except ProcessLookupError:
-        return True  # No owned group remains.
-    except OSError:
-        return False
-
-
 def _teardown(proc, signum):
     """Forward once, then kill the group even if its leader has already exited."""
-    known = _signal_group(proc, signum)
     if signum != signal.SIGKILL:
+        try:
+            os.killpg(proc.pid, signum)
+        except ProcessLookupError:
+            return True
+        except OSError:
+            pass  # The bounded final group signal must establish teardown.
         deadline = time.monotonic() + _CANCEL_GRACE_SECONDS
         while time.monotonic() < deadline:
             proc.poll()
             try:
                 os.killpg(proc.pid, 0)
             except ProcessLookupError:
-                break
+                return True  # Absence is already established; do not signal again.
             except OSError:
                 # Some POSIX hosts transiently report EPERM for an exiting group.
                 # The final kill/reap decides whether teardown is established.
                 pass
             time.sleep(min(_POLL_SECONDS, max(0, deadline - time.monotonic())))
-        known = _signal_group(proc, signal.SIGKILL)
-    return known
+    # macOS can transiently report EPERM while a group disappears. Reap the
+    # leader and retry within a separate bound, requiring a successful group
+    # signal or ESRCH. A reaped leader alone does not establish group teardown.
+    deadline = time.monotonic() + _KILL_RETRY_SECONDS
+    while True:
+        proc.poll()
+        try:
+            os.killpg(proc.pid, signal.SIGKILL)
+        except ProcessLookupError:
+            return True
+        except OSError:
+            pass
+        else:
+            return True
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            return False
+        time.sleep(min(_POLL_SECONDS, remaining))
 
 
 def _drain_and_reap(proc):
