@@ -185,7 +185,7 @@
     },
     "docs/implementation/release-plan/STATUS.md": {
       "source": "distribution/curated/docs/implementation/release-plan/STATUS.md",
-      "sha256": "dfb46e52e2658dacde882f125a21baa9266b361bf8ff4d4d054373e9401c5424"
+      "sha256": "683ce135ff40d6cb42e99324a9858e134a19cc55aa12c2ffb4836d82ec5e8307"
     },
     "docs/implementation/release-plan/R06-linux-evidence.md": {
       "source": "distribution/curated/docs/implementation/release-plan/R06-linux-evidence.md",

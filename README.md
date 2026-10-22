@@ -146,7 +146,9 @@ Every command following `--` is passed as argv, without an implicit shell.
 See the [current checks and release scope](docs/candidate-review.md) and
 [measured results](docs/results/README.md). Unit tests use synthetic hosts;
 Linux tests, physical NUMA observations and performance studies are separate
-forms of evidence. Hosted CI checks are linked when they have actually run.
+forms of evidence. The [verified 25-job CI run](https://github.com/Kalacun/simtune/actions/runs/39763864452)
+covers source and installed packages on Linux/macOS with Python 3.11–3.14;
+the check report explains optional-dependency and compiler-related skips.
 
 - Strict Linux search is experimental. Physical NUMA placement, real perf counters
   and Slurm integration have no validated result in this release.

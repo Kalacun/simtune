@@ -23,7 +23,7 @@ kernel settings.
 | State | Scope | Gate |
 | --- | --- | --- |
 | Implemented | Manual legacy CLI; strict manifests/checks, fixed CPU/thread paired search, recipe export/load/replay/validation, config/IDs/show/resume, perf imports | Local software tests; [release handoffs](implementation/release-plan/STATUS.md) |
-| Experimental | Strict one-program single-node Linux/OpenMP/NUMA launches and perf counter collection | R06 Linux functional/workload evidence pending; real counters separate |
+| Experimental | Strict one-program single-node Linux/OpenMP/NUMA launches and perf counter collection | Hosted Linux affinity/OpenMP and checked CLI workflow passed; dedicated R06 study, physical NUMA and real counters remain pending |
 | Planned/deferred | Slurm adapter, ensemble executor, thread-count search and workflow integration | R08/R09/R10 or later scope |
 
 The [checked heat example](../examples/HEAT_EXPERIMENT.md) uses a declared runtime,
